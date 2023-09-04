@@ -169,7 +169,7 @@ body main section.resume section.picture div.greenReact3 {
     display: none;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   body nav {
     position: static;
   }

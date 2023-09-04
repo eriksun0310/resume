@@ -1,0 +1,212 @@
+$themeColor:#baebf5;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+body{
+    nav{
+        background-color: white;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        ul{
+            display: flex;
+            li{
+                list-style-type: none;
+                margin: 1rem;
+                a{
+                    color: black;
+                    text-decoration: none;
+                    transition: all 0.1s ease;
+                    &:hover{
+                        color: aqua;
+                    }
+                }
+            }
+        }
+    }
+
+    main{
+        section.main-area{
+            min-height: 70vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            div.info{
+                margin: 2rem 3rem;
+                flex-basis: 450px;
+                h1{
+                    font-size: 3.5rem;
+                }
+                h2{
+                    font-size: 1rem;
+                }
+                a{
+                    margin-top: 3rem;
+                    background-color: $themeColor;
+                    text-decoration: none;
+                    color: white;
+                    padding: 0.5rem 0.5rem;
+                    font-size: 1.5rem;
+                    border-radius: 20px;
+                    display: inline-block;
+                    //因為是a 標籤所以要設置 inline-black 才可以調 上下margin
+                    margin-top: 2rem ;
+                    transition: all 0.2s ease;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            img{
+                flex-basis: 300px;
+                width: 30vw;
+            }
+        }
+
+        section.about-me{
+            padding: 5rem 2rem;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color:$themeColor;
+            div.desc{
+                // border: 1px solid red;
+                width: 50%;
+                text-align: center;
+                h2{
+                    font-size:2rem;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            div.progress-area{
+                // border: 1px solid black;
+                p{
+                    margin: 0.5rem 0rem;
+                }
+                .progress-bar-area{
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+
+        section.resume{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem;
+            section.table{
+                flex: 5 1 500px;
+                padding: 2rem;
+                table{
+                    border-collapse: collapse;
+                    tr{
+                        border-bottom: 2px solid gray;
+                        transition: all 0.2s ease;
+                        &:hover{
+                            background-color: #f4fcff;
+                        }
+                        td{
+                            position: relative;
+                            z-index: 1;
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+            
+            section.picture{
+                flex: 1 1 300px;
+                position: relative;
+                img{
+                    width: 21vw;
+                    position: relative;
+                    z-index: 1;
+                }
+                div.greenReact{
+                    position: absolute;
+                    top: 30px;
+                    left: 80px;
+                    // z-index: -1;
+                    width: 30vw;
+                    height: 90vh;
+                    border: 10px solid $themeColor;
+                }
+                div.greenReact2{
+                    position: absolute;
+                    top: 300px;
+                    left: -300px;
+                    // z-index: -1;
+                    width: 50vw;
+                    height: 40vh;
+                    border: 10px solid $themeColor;
+                }
+                div.greenReact3{
+                    position: absolute;
+                    top: 0px;
+                    left: -100px;
+                    // z-index: -1;
+                    width: 50vw;
+                    height: 40vh;
+                    border: 10px solid $themeColor;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    //要包在body裡面才會有效
+    body{
+        main{
+            section.about-me{
+                padding: 1rem 0.5rem;
+                div.desc{
+                    width: 80%;
+                }
+            }
+            section.resume{
+                section.table{
+                    // min-width: 800px;
+                }
+                padding: 0rem;
+                section.picture{
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        width: 90vw;
+                    }
+                    div.greenReact, div.greenReact2, div.greenReact3{
+                        display: none;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+// 導覽列 -手機 換行
+@media screen and (max-width: 400px) {
+    body{
+        nav{
+            position: static;
+            ul{
+                flex-direction: column;
+            }
+        }
+    }
+}
